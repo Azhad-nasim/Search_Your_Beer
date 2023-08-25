@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import React, { useState, useEffect } from "react";
+import Searchbar from "./components/Searchbar";
+import Card from "./components/card";
+import SearchbarResult from "./components/SearchbarResult";
 function App() {
+  const [results, setResults] = useState([]);
+  const [selectedBeer, setSelectedBeer] = useState(null);
+
+  const handleSelectBeer = (beer) => {
+    setSelectedBeer(beer);
+  };
+  const clearSearch = () => {
+    setResults([]); // Clear search results
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Searchbar setResults={setResults} clearSearch={clearSearch} />
+      <SearchbarResult
+        results={results}
+        onSelectBeer={handleSelectBeer}
+        clearSearch={clearSearch}
+      />
+      <Card selectedBeer={selectedBeer} />
     </div>
   );
 }

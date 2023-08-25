@@ -1,0 +1,254 @@
+.container_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: 100vh; */
+  perspective: 1000px;
+}
+.content {
+  display: flex;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  justify-content: center;
+  align-items: center;
+}
+.container_card :hover .content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+.profile-card,
+.profile-card-flip {
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* position: absolute; */
+  margin: 20px;
+  border: 1px solid #ccc;
+  height: auto;
+  width: 400px;
+  transform-style: preserve-3d;
+}
+.profile-card {
+  transition: transform 0.5s ease-in-out;
+}
+.profile-card-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  background: #03446a;
+  color: white;
+  transition: transform 0.5s ease-in-out;
+  transform: rotateY(0deg);
+}
+
+.container_card.flipped .profile-card {
+  transform: rotateY(180deg);
+}
+.container_card.flipped .profile-card {
+  transform: rotateY(0deg);
+}
+
+.container_card.flipped .profile-card-flip {
+  transform: rotateY(360deg);
+}
+.profile-card header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card header img.hovercard {
+  border-radius: 10% 10%;
+  width: 100px;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-card h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.profile-card h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #888;
+  font-family: Arial, sans-serif;
+  text-decoration: underline;
+}
+
+.card-description {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-family: "Times New Roman", serif;
+}
+
+.card-description p {
+  margin: 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.card-description span {
+  display: block;
+  margin-top: 10px;
+  color: black;
+  text-align: center;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.open-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.open-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.line-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.line-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-size: 0.8rem;
+}
+
+.section-header {
+  flex-grow: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #5d90c7;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #007bff;
+  border-top: 1px solid #007bff;
+}
+
+.profile-card-flip h3 {
+  text-align: center;
+  flex-grow: 1;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #c8e3ff;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #007bff;
+  border-top: 1px solid #007bff;
+  margin-top: 5px;
+}
+.ingredient-list {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ingredient-list h4 {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #7db4ef;
+}
+
+.ingredient-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredient-list li {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+  color: #fff;
+}
+
+.method-details {
+  margin-top: 20px;
+}
+
+.method-details p {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Styling for Food Pairing */
+.food-pairing {
+  margin-top: 20px;
+}
+
+.food-pairing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.food-pairing li {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
+.display {
+  display: flex;
+  animation: pulse 2s infinite;
+  position: relative;
+  bottom: 5rem;
+  margin: auto;
+  color: white;
+  font: 700 normal 2em "tahoma";
+  text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+@media screen and (max-width: 480px) {
+  .display {
+    position: relative;
+    font: 700 normal 1.5em "tahoma";
+    margin-left: 1rem;
+  }
+  .profile-card {
+    width: auto;
+  }
+}
